@@ -61,6 +61,28 @@
 
 								});
 
+								$('.btn_deixar_seguir').click(function(){
+
+									var id_usuario = $(this).data('id_usuario');
+
+									$.ajax({
+
+										url: 'deixar_seguir.php',
+
+										method: 'POST',
+
+										data: { deixar_seguir_id_usuario : id_usuario },
+
+										success: function(data){
+
+											alert("Registro removido com sucesso!");
+
+										}
+
+									});
+
+								});
+
 							}
 
 						});
