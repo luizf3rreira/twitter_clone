@@ -14,8 +14,7 @@
     $objDb = new db();
     $link = $objDb->conecta_mysql();
     
-    $sql = " SELECT * FROM usuarios WHERE usuario LIKE '%$nome_pessoa%' AND id <> $id_usuario";
-   
+    $sql = "SELECT * FROM usuarios WHERE usuario LIKE '%$nome_pessoa%' AND id <> $id_usuario";
 
     $resultado_id = mysqli_query($link, $sql);
 
@@ -23,17 +22,18 @@
 
         while($registro = mysqli_fetch_array($resultado_id, MYSQLI_ASSOC)){
 
-            // var_dump($registro);
-
-            // echo "<br /><br />";
-
             echo '<a href="#" class="list-group-item">';
-               echo '<strong>'.$registro['usuario'].'</strong> <small> - '.$registro['email'].'</small>';
-               echo '<p class="list-group-item-text pull-right">';
-                    //btn
-                    echo '<button type="button" class="btn btn-default">Seguir</button> ';
-               echo '</p>';
-               echo '<div class="clearfix"></div>';
+
+                echo '<strong>' . $registro['usuario'] . '</strong> <small> - ' . $registro['email'] . ' </small>';
+
+                echo '<p class="list-group-item-text pull-right">';
+
+                    echo '<button type="button" class="btn btn-default btn_seguir" data-id_usuario="' . $registro['id'] . '">Seguir</button>';
+                
+                echo '</p>';
+
+                echo '<div class="clearfix"></div>';
+
             echo '</a>';
 
         }

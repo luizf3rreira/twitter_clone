@@ -38,7 +38,28 @@
 							success: function(data){
 
 								$('#pessoas').html(data);
-								// alert(data);	
+
+								$('.btn_seguir').click(function(){
+
+									var id_usuario = $(this).data('id_usuario');
+
+									$.ajax({
+
+										url: 'seguir.php',
+
+										method: 'POST',
+
+										data: { seguir_id_usuario : id_usuario },
+
+										success: function(data){
+
+											alert("Registro efetuado com sucesso!");
+
+										}
+
+									});
+
+								});
 
 							}
 
@@ -47,8 +68,6 @@
 					}
 
 				});
-
-							
 
 			});
 
@@ -73,7 +92,7 @@
 
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="home.php">Home</a></li>
+                        <li><a href="home.php">Home</a></li>
 						<li><a href="sair.php">Sair</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
@@ -112,7 +131,6 @@
 			<div class="col-md-3">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						
 					</div>
 				</div>
 			</div>
