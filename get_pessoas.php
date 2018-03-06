@@ -28,9 +28,9 @@
 
                 echo '<p class="list-group-item-text pull-right">';
 
-                    echo '<button type="button" class="btn btn-default btn_seguir" data-id_usuario="' . $registro['id'] . '">Seguir</button>';
+                    echo '<button type="button" id="btn_seguir_'.$registro['id'].'" class="btn btn-default btn_seguir" data-id_usuario="' . $registro['id'].'">Seguir</button>';
 
-                    echo '<button type="button" class="btn btn-primary btn_deixar_seguir" data-id_usuario="' . $registro['id'] . '">Deixar de Seguir</button>';
+                    echo '<button type="button" style="display:none" id="btn_deixar_seguir_'.$registro['id'].'" class="btn btn-primary btn_deixar_seguir" data-id_usuario="' . $registro['id'] . '">Deixar de Seguir</button>';
                 
                 echo '</p>';
 
