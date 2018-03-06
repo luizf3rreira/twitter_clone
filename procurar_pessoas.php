@@ -43,8 +43,9 @@
 
 									var id_usuario = $(this).data('id_usuario');
 
-									$('#btn_seguir_'+id_usuario).hide();
-									$('#btn_deixar_seguir_'+id_usuario).show();
+									$('#btn_seguir_' + id_usuario).hide();
+
+									$('#btn_deixar_seguir_' + id_usuario).show();
 
 									$.ajax({
 
@@ -68,8 +69,9 @@
 
 									var id_usuario = $(this).data('id_usuario');
 
-									$('#btn_seguir_'+id_usuario).show();
-									$('#btn_deixar_seguir_'+id_usuario).hide();
+									$('#btn_seguir_' + id_usuario).show();
+
+									$('#btn_deixar_seguir_' + id_usuario).hide();
 
 									$.ajax({
 
